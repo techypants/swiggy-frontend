@@ -16,9 +16,11 @@ function MealItem({ meal }) {
       </div>
 
       <div className="mt-3 flex flex-col items-start w-full overflow-hidden m-3">
-        <h3 className="font-bold text-nowrap ml-4 md:ml-0 overflow-hidden text-gray-700 text-xl">
+
+				<h3 className="font-bold text-nowrap ml-4 md:ml-0 overflow-hidden text-gray-700 text-xl">
           {meal.strMeal}
-        </h3>
+				</h3>
+
         <p>{meal.strCategory}</p>
         <span className="flex gap-2 items-center ml-4 md:ml-0 font-bold text-lg text-gray-700">
           <FaStar />
