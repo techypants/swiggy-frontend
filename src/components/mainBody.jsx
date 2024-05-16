@@ -98,7 +98,7 @@ function Main() {
               </svg>
             </button>
             {isOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
+              <div className="absolute left-10 right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
                 <ul>
                   {category.map((option) => (
                     <li
