@@ -70,11 +70,11 @@ function Main() {
   }
 
   return (
-    <div className="pt-5 w-full h-full flex flex-col items-center bg-[#ebedee93] justify-center relative">
+    <div className="pt-5 w-full h-full flex flex-col items-center bg-[#ebedee93] justify-center relative ">
       <p className="text-2xl font-bold w-[75%]">
         Restaurants with online food delivery in Pune
       </p>
-      <div className="flex gap-5 w-[75%] mt-5 mb-8">
+      <div class="flex flex-wrap gap-5 ml-6 md:ml-0 md:w-3/4 mt-5 mb-8">
         <div className="z-10">
           <div className="relative inline-block">
             <button
