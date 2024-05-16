@@ -5,7 +5,7 @@ import Main from "./components/mainBody";
 
 export default function App() {
   return (
-    <div className=" flex flex-col">
+    <div className=" flex flex-col items-center">
 			<Header />
 			<Main/>
 			<Footer/>

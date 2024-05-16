@@ -3,8 +3,8 @@ import logo from "../assets/logo.png";
 
 export default function Header() {
   return (
-    <div className="w-full bg-slate-00 flex md:flex-row flex-col gap-4 items-center justify-around p-6">
-      <img src={logo} alt="logo" className="h-12 lg:h-18" />
+    <div className="w-[85%]  flex md:flex-row flex-col gap-4 items-center justify-between p-4 ">
+      <img src={logo} alt="logo" className="h-14 lg:h-18" />
 
       <form className="flex items-center justify-between md:w-[25%] p-2 bg-slate-200 rounded-md">
         <input
