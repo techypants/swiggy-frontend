@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MealItem from "./blocks";
 import Pagination from "./pagination";
+import Modal from "./modal";
 
 function Main() {
   const [meals, setMeals] = useState([]);
@@ -13,6 +14,7 @@ function Main() {
   const [postPerPage] = useState(8);
 
   const [postsort, setSort] = useState(true);
+  const [modalval, setModalVal] = useState(null);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -47,7 +49,7 @@ function Main() {
     };
 
     fetchData();
-  }, [selectedOption]);
+  }, [selectedOption, postsort]);
 
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -63,7 +65,6 @@ function Main() {
       setSort(false);
     }
   };
-  console.log(postsort);
 
   if (!postsort) {
     meals.reverse();
@@ -76,7 +77,7 @@ function Main() {
       </p>
       <div class="flex flex-wrap gap-5 ml-6 md:ml-0 md:w-3/4 mt-5 mb-8">
         <div className="z-10">
-          <div className="relative inline-block">
+          <div className="inline-block">
             <button
               className="button-style pl-3 pr-3 p-1"
               onClick={toggleDropdown}
@@ -98,7 +99,7 @@ function Main() {
               </svg>
             </button>
             {isOpen && (
-              <div className="absolute left-10 right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
+              <div className="left-10 right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
                 <ul>
                   {category.map((option) => (
                     <li
@@ -140,13 +141,6 @@ function Main() {
         <button className="button-style">Offer</button>
       </div>
 
-      <div className="meal-list grid z-0 lg:grid-cols-4 grid-cols-1 md:grid-cols-2 mt-8">
-        {currentPosts?.map((meal) => (
-          <MealItem key={meal?.idMeal} meal={meal} />
-        ))}
-      </div>
-
-      {console.log(postPerPage, meals?.length)}
       <div>
         <Pagination
           postsPerPage={postPerPage}
@@ -155,6 +149,38 @@ function Main() {
           currentPage={currentPage}
         />
       </div>
+
+      <div className="meal-list grid z-0 lg:grid-cols-4 grid-cols-1 md:grid-cols-2 mt-8">
+        {currentPosts?.map((meal) => (
+          <div key={meal.idMeal}>
+            <button
+              onClick={() => {
+                setModalVal(meal.idMeal);
+              }}
+            >
+              <MealItem meal={meal} />
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {modalval && (
+        <div className="absolute p-2 top-0 bg-[#444444d0] h-full rounded-lg md:max-h-[100vh] overflow-y-auto">
+          <div className=" flex flex-col items-center w-[100vw] h-[100vh]">
+            <button
+              onClick={() => {
+                setModalVal(null);
+              }}
+              className="p-2 text-xl rounded-full bg-red-400 w-[50px] font-bold text-white"
+            >
+              X
+            </button>
+            <Modal prop={modalval} />
+          </div>
+        </div>
+      )}
+
+      {console.log(postPerPage, meals?.length)}
     </div>
   );
 }

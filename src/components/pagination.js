@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+
 export default function Pagination({
   postsPerPage,
   totalPosts,
@@ -31,7 +32,9 @@ export default function Pagination({
         {pageNumbers.map((number) => (
           <li
             key={number}
-            className="page-item border-orange-500 bg-[#FC8112] text-white text-lg font-bold border-2 rounded-md text-center w-8 h-8"
+            className={`page-item border-orange-500 bg-[#FC8112] text-lg font-bold border-2 rounded-md text-center w-8 h-8 ${
+              number === currentPage ? "bg-[#e4b962] border-0 text-white" : "text-white"
+            }`}
           >
             <a onClick={() => paginate(number)} href="#!" className="page-link">
               {number}
