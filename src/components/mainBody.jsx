@@ -128,8 +128,9 @@ function Main() {
           onChange={(e) => handleSortChange(e.target.value)}
           className="text-black button-style bg-slate-100"
         >
-          <option value="Sort A-Z">Sort A-Z</option>
-          <option value="Sort Z-A">Sort Z-A</option>
+          <option value="Sort by">Sort By</option>
+          <option value="Sort A-Z">Sort Z-A</option>
+          <option value="Sort Z-A">Sort A-Z</option>
         </select>
 
         <button className="button-style">Fast Delivery</button>
