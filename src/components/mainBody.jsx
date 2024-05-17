@@ -61,7 +61,7 @@ function Main() {
     setSort(value);
     if (value === "Sort A-Z") {
       setSort(true);
-      setMeals(meals);
+      setMeals(meals.reverse());
     } else if (value === "Sort Z-A") {
       setSort(false);
       setMeals(meals.reverse());
