@@ -15,7 +15,7 @@ export default function Pagination({
 
   return (
     <nav className="w-full p-4">
-      <ul className="pagination flex-wrap justify-center items-center flex gap-2">
+      <ul className="pagination  flex-wrap justify-end flex gap-2 ">
         {/* Previous button */}
         <li
           className={`flex page-item border-orange-500 bg-[#FC8112] text-white text-lg font-bold border-2 rounded-md text-center w-8 h-8 ${
@@ -33,7 +33,9 @@ export default function Pagination({
           <li
             key={number}
             className={`page-item border-orange-500 bg-[#FC8112] text-lg font-bold border-2 rounded-md text-center w-8 h-8 ${
-              number === currentPage ? "bg-[#e4b962] border-0 text-white" : "text-white"
+              number === currentPage
+                ? "text-white"
+                : "text-[#FC8112] bg-white border-2"
             }`}
           >
             <a onClick={() => paginate(number)} href="#!" className="page-link">

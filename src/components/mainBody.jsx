@@ -49,7 +49,7 @@ function Main() {
     };
 
     fetchData();
-  }, [selectedOption, postsort]);
+  }, [selectedOption]);
 
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -61,25 +61,23 @@ function Main() {
     setSort(value);
     if (value === "Sort A-Z") {
       setSort(true);
+      setMeals(meals.reverse());
     } else if (value === "Sort Z-A") {
       setSort(false);
+      setMeals(meals.reverse());
     }
   };
-
-  if (!postsort) {
-    meals.reverse();
-  }
 
   return (
     <div className="pt-5 w-full h-full flex flex-col items-center bg-[#ebedee93] justify-center relative ">
       <p className="text-2xl font-bold w-[75%]">
         Restaurants with online food delivery in Pune
       </p>
-      <div class="flex flex-wrap gap-5 ml-6 md:ml-0 md:w-3/4 mt-5 mb-8">
-        <div className="z-10">
-          <div className="inline-block">
+      <div class="flex relative flex-wrap gap-5 ml-6 md:ml-0 md:w-3/4 mt-5 mb-8">
+        <div className="">
+          <div className=" inline-block">
             <button
-              className="button-style pl-3 pr-3 p-1"
+              className="button-style pl-3 pr-3 p-1 z-0"
               onClick={toggleDropdown}
             >
               Filter
@@ -99,7 +97,7 @@ function Main() {
               </svg>
             </button>
             {isOpen && (
-              <div className="left-10 right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
+              <div className="absolute left-10 right-0 mt-2 w-40 bg-white border rounded shadow-lg z-20 overflow-y-auto max-h-80">
                 <ul>
                   {category.map((option) => (
                     <li
@@ -130,7 +128,6 @@ function Main() {
           onChange={(e) => handleSortChange(e.target.value)}
           className="text-black button-style bg-slate-100"
         >
-          <option value="">Sort By</option>
           <option value="Sort A-Z">Sort A-Z</option>
           <option value="Sort Z-A">Sort Z-A</option>
         </select>
@@ -141,7 +138,7 @@ function Main() {
         <button className="button-style">Offer</button>
       </div>
 
-      <div>
+      <div className=" w-[80%]">
         <Pagination
           postsPerPage={postPerPage}
           totalPosts={meals?.length}
@@ -165,7 +162,7 @@ function Main() {
       </div>
 
       {modalval && (
-        <div className="absolute p-2 top-0 bg-[#444444d0] h-full rounded-lg md:max-h-[100vh] overflow-y-auto">
+        <div className="absolute p-2 top-0 bg-[#444444d0] h-full overflow-x-hidden overflow-y-auto">
           <div className=" flex flex-col items-center w-[100vw] h-[100vh]">
             <button
               onClick={() => {
