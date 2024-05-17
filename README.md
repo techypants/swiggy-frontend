@@ -1,7 +1,9 @@
 Basic react application for swiggy frontend clone
 
-clone it\n
-npm i\n
+clone it
+
+npm i
+
 npm run start
 
 filter and sort options are available
