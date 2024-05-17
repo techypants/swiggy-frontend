@@ -9,7 +9,7 @@ export default function Footer() {
         className="h-20 m-8"
       ></img>
       <span className="text-[#FFFFFF] m-[-40px] font-bold text-[25px]">
-        SWIGGY
+        S W I G G Y
       </span>
     </div>
   );

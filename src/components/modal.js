@@ -22,7 +22,7 @@ export default function Modal({ prop }) {
   console.log(data);
 
   return (
-    <div className=" bg-slate-200  p-2  text-gray-700 m-auto  md:w-[60%] w-[90%] rounded-2xl flex flex-col ">
+    <div className=" bg-white  p-2  text-gray-700 m-auto  md:w-[60%] w-[90%] rounded-2xl flex flex-col ">
       <div className="h-[200px] md:h-[300px] flex items-center justify-center object-cover relative rounded-[15px] overflow-hidden shadow-xl shadow-slate-600 mb-4">
         <img
           src={data?.strMealThumb}
