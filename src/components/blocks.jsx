@@ -10,16 +10,13 @@ function MealItem({ meal }) {
           alt={meal.strMeal}
           className="w-[98vw] md:w-[300px] m-auto"
         />
-        <div className="image-overlay w-full h-full absolute top-0 flex items-end p-2 justify-center text-[20px] font-bold text-white ">
-          ₹120 off above ₹190
-        </div>
+        <div className="image-overlay w-full h-full absolute top-0 flex items-end p-2 justify-center text-[20px] font-bold text-white "></div>
       </div>
 
       <div className="mt-3 flex flex-col items-start w-full overflow-hidden m-3">
-
-				<h3 className="font-bold text-nowrap ml-4 md:ml-0 overflow-hidden text-gray-700 text-xl">
+        <h3 className="font-bold text-nowrap ml-4 md:ml-0 overflow-hidden text-gray-700 text-xl">
           {meal.strMeal}
-				</h3>
+        </h3>
 
         <p>{meal.strCategory}</p>
         <span className="flex gap-2 items-center ml-4 md:ml-0 font-bold text-lg text-gray-700">
