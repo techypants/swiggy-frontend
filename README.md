@@ -1,3 +1,5 @@
+This was way back when i was learning to code, the codebase is a mess here, please do not judge
+
 Basic react application for swiggy frontend clone
 
 clone it
